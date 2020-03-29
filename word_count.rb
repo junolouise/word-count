@@ -15,6 +15,8 @@ class Phrase
   def word_count
     if @word.match(" ")
       seperate_word = @word.split
+    elsif @word.match("\n")
+      seperate_word = @word.delete!("\n").split(",")
     else
       seperate_word = @word.split(",")
     end
