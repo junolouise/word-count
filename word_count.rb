@@ -5,7 +5,7 @@ Write your code for the 'Word Count' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/word-count` directory.
 =end
-
+require 'pry'
 class Phrase
 
   def initialize(word)
@@ -13,7 +13,11 @@ class Phrase
   end
 
   def word_count
-    seperate_word = @word.split
+    if @word.match(" ")
+      seperate_word = @word.split
+    else
+      seperate_word = @word.split(",")
+    end
     result = seperate_word.each_with_object(Hash.new(0)) { |word, counts| counts[word] += 1 }
   end
 end
