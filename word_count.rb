@@ -9,7 +9,7 @@ require 'pry'
 class Phrase
 
   def initialize(word)
-    @word = word
+    @word = word.gsub(/[^a-z\s]/, ' ')
   end
 
   def word_count
